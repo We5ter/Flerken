@@ -61,6 +61,10 @@ If you have any question or feedbacks on Flerken. Please create an issue and cho
   <img src="doc/labels.png" width="95%">
 </p>
 
+## CHANGELOG
+
+Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
+
 ## Build-in 3rd parties
 
 - <b>[Flask](http://flask.pocoo.org)</b>

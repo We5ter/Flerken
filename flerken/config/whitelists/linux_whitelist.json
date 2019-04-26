@@ -1,0 +1,55 @@
+{
+    "generic":{
+        "echo_type": {
+            "0": {"regex": "thisisregex", "length": 80, "condition": "<"},
+            "1":  {"regex": "thisisregex"},
+            "2":  {"regex": "thisisregex"}
+        },
+        "varible_name":{
+            "0": {"regex": "thisisregex"},
+            "1": {"regex": "thisisregex"},
+            "2": {"regex": "thisisregex"}
+        },
+       "sub_syntax":{
+	        "0": {"regex": "thisisregex"}
+        },
+        "special_calc":{
+            "0": {"regex": "thisisregex", "length": 51, "condition": "="},
+            "1": {"regex": "thisisregex"}
+        },
+        "ifs":{
+            "0": {"regex": "thisisregex"},
+            "1": {"regex": "thisisregex", "length": 25, "condition": "<"},
+            "2": {"regex": "thisisregex"}
+        },
+        "offset_ctl":{
+            "0": {"regex": "thisisregex"}
+        },
+        "escape_char":{
+            "0": {"regex": "thisisregex"},
+            "1": {"regex": "thisisregex"}
+        },
+        "reverse_char":{
+            "0": {"regex": "thisisregex"}
+        },
+        "base64":{
+            "0": {"regex": "thisisregex"},
+            "1": {"regex": "thisisregex"}
+        },
+        "rot13_char":{
+            "0": {"regex": "thisisregex"},
+            "1": {"regex": "thisisregex"}
+        },
+        "octal_code":{
+            "0": {"regex": "thisisregex"}
+        },
+        "hex_or_unicode":{
+            "0": {"regex": "thisisregex"}
+        },
+        "wildcard":{
+            "0": {"regex": "thisisregex"}
+        }
+    },
+    "graphic": {},
+    "special": {}
+}

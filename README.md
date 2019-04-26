@@ -81,8 +81,7 @@ Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
 
 ## Acknowledgments
 
-We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Data
-Security Team</b> for their insightful feedbacks throughout the project. We also thank <b>Ning Liu, Junjun
+We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Tencent Blade Team</b> for their insightful feedbacks throughout the project. We also thank <b>Ning Liu, Junjun
 Luo, and Lake Hu</b> for their valuable comments and support.
 
 ## License

@@ -14,7 +14,7 @@ APP_CONFIG = {
     "DEBUG": True, #debug mode
     "SECRET_KEY": "awesomeflerken*",
     "QPS_LIMIT": True,
-    "LIMIT_SETTING": ["200 per minute", "5 per second"]，
+    "LIMIT_SETTING": ["200 per minute", "5 per second"],
     "LOG_FILE": "flerken.log"
 }
 

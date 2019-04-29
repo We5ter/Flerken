@@ -13,6 +13,7 @@ import os
 import hashlib
 import time
 import re
+from flerken import app
 try:
     from .plugins.linux_generic_detect_plugin import linux_generic_detect_plugin
 except Exception: 
@@ -41,8 +42,12 @@ except Exception:
 class smart_detect(object):
 
     def __init__(self,cmd):
+        app.logger.info('='*50)
+        app.logger.info('[+]time: '+datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         self.original_cmd = cmd
+        app.logger.info('[+]original cmd: '+self.original_cmd)
         self.cmd = custom_meta_chars_plugin(cmd).result
+        app.logger.info('[+]meta cmd: '+self.cmd)
         self.start_time = time.time()
 
     def _prepare_pattern(self, regex):
@@ -68,6 +73,9 @@ class smart_detect(object):
         linux_identification_generic = linux_generic_detect_plugin(self.cmd).result
         linux_identification_graphic = linux_graphic_detect_plugin(self.cmd).result
         linux_identification_special = linux_special_detect_plugin(self.cmd).result
+        app.logger.info('[+]linux_identification_generic: '+str(linux_identification_generic))
+        app.logger.info('[+]linux_identification_graphic: '+str(linux_identification_graphic))
+        app.logger.info('[+]linux_identification_special: '+str(linux_identification_special))
         if linux_identification_graphic['obfuscated'] == True:
             self.end_time = time.time()
             linux_identification_graphic['measure_time'] = str(round(self.end_time - self.start_time,5)) + 's'
@@ -95,6 +103,7 @@ class smart_detect(object):
     
     def win_identify(self):
         if len(self.cmd) <= 20:
+            app.logger.info('[+]win_identify cmd length < 20')
             win_identification = dict()
             win_identification['res'] = 0
             win_identification['obfuscated'] = False
@@ -108,6 +117,8 @@ class smart_detect(object):
 
         special_res = win_special_detect_plugin(self.cmd).result
         generic_res = win_generic_detect_plugin(self.cmd).result
+        app.logger.info('[+]win_special_res: '+str(special_res))
+        app.logger.info('[+]win_generic_res: '+str(generic_res))
         if generic_res['obfuscated'] == True:
             win_identification = dict()
             win_identification['res'] = 0

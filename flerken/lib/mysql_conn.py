@@ -1140,7 +1140,7 @@ def is_numeric(var):
 
 # 仿PHP的PDO::quote，当前仅对单双引号进行转义，并在字符串左右加上单引号
 def pdo_quote(string):
-    return "'" + re.sub(r'(?<=[^\\])([\'\"])', r'\\\1', str(string)) + "'"
+    return "'" + re.sub(r'(?<=[^\\])([\'\"\%\_])', r'\\\1', str(string)) + "'"
 
 #M函数
 def M(dbtable, ConfigID=0, dbConfig=None):

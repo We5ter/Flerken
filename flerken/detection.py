@@ -12,12 +12,9 @@ from flask import render_template, request, redirect, url_for
 from flerken import app
 import html
 import json
-import re
 from .control.smart_detect import smart_detect
 from .lib.mysql_conn import *
 from datetime import datetime
-
-Results = M('results')
 
 @app.route('/detection', methods = ['GET'])
 def detection_index():
@@ -42,7 +39,7 @@ def detect_api():
             res = smart_detect(cmd).linux_identify()
             db_info = {}
             db_info['rid'] = 0
-            db_info['cmd'] = re.escape(res['cmd'])
+            db_info['cmd'] = res['cmd']
             db_info['hash'] = res['hash']
             db_info['obfuscated'] = str(res['obfuscated'])
             db_info['likely_platform'] = res['platform']
@@ -54,13 +51,14 @@ def detect_api():
             except Exception:
                 db_info['submit_ip'] = request.remote_addr
             db_info['submit_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            Results = M('results')
             Results.add(db_info)
             return json.dumps(res)
         elif platform == 'windows':
             res = smart_detect(cmd).win_identify()
             db_info = {}
             db_info['rid'] = 0
-            db_info['cmd'] = re.escape(res['cmd'])
+            db_info['cmd'] = res['cmd']
             db_info['hash'] = res['hash']
             db_info['obfuscated'] = str(res['obfuscated'])
             db_info['likely_platform'] = res['platform']
@@ -72,13 +70,14 @@ def detect_api():
             except Exception:
                 db_info['submit_ip'] = request.remote_addr
             db_info['submit_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            Results = M('results')
             Results.add(db_info)
             return json.dumps(res)
         elif platform == 'not_sure':
             res = smart_detect(cmd).not_sure_identify()
             db_info = {}
             db_info['rid'] = 0
-            db_info['cmd'] = re.escape(res['cmd'])
+            db_info['cmd'] = res['cmd']
             db_info['hash'] = res['hash']
             db_info['obfuscated'] = str(res['obfuscated'])
             db_info['likely_platform'] = res['likely_platform']
@@ -90,6 +89,7 @@ def detect_api():
             except Exception:
                 db_info['submit_ip'] = request.remote_addr
             db_info['submit_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            Results = M('results')
             Results.add(db_info)
             return json.dumps(res)
         else:

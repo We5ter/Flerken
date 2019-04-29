@@ -11,10 +11,11 @@ __copyright__   = "Copyright 2019, Apache License 2.0"
 APP_CONFIG = {
     "HOST": "127.0.0.1",
     "PORT": 8080,
-    "DEBUG": "True", #debug mode
+    "DEBUG": True, #debug mode
     "SECRET_KEY": "awesomeflerken*",
     "QPS_LIMIT": True,
-    "LIMIT_SETTING": ["200 per minute", "5 per second"]
+    "LIMIT_SETTING": ["200 per minute", "5 per second"]，
+    "LOG_FILE": "flerken.log"
 }
 
 DB_CONFIG = {

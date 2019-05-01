@@ -35,13 +35,17 @@ For a detailed description of Flerken, please review our specification document 
   
   `[root@server:~$] pip install -r requirement.txt`
   
-  #### Step3: Custom your Flerken APP config as you want.
+  #### Step 3: Login in your MySQL console, and import database
+  
+  `source /your path/Flerken/flerken/lib/flerken.sql`
+  
+  #### Step4: Custom your Flerken APP config as you want.
   `Path: flerken/config/global_config.py`
   
-  #### Step4: Now you can run it!
+  #### Step5: Now you can run it!
    `[root@server:~$] python runApp.py`
    
-  #### Step 5(Optional): You can build your own whitelists for reducing false positive rate.
+  #### Step 6(Optional): You can build your own whitelists for reducing false positive rate.
   `Path: flerken/config/whitelists/`
 
  

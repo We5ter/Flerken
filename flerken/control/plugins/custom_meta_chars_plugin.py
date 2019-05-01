@@ -38,11 +38,11 @@ class custom_meta_chars_plugin(object):
 if __name__ == '__main__':
 
     #test
-    sample1 = '测测测测ddd121323213*&^&%$$")({}[]'
+    sample1 = 'ddd121323213*&^&%$$")({}[]'
     print('input cmd: '+sample1)
     a = custom_meta_chars_plugin(sample1).result
     print('out: '+str(a))
-    sample2 = '测测测测vcvddd12132fgfdgfdgfd3213*&^&%$$")3(e3wqre{rrewr}[]'
+    sample2 = 'vcvddd12132fgfdgfdgfd3213*&^&%$$")3(e3wqre{rrewr}[]'
     print('input cmd: '+sample2)
     b = custom_meta_chars_plugin(sample2).result
     print('out: '+str(b))

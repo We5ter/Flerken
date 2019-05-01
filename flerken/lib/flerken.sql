@@ -2,10 +2,10 @@
 -- version phpStudy 2014
 -- http://www.phpmyadmin.net
 --
--- 主机: localhost
--- 生成日期: 2019 年 04 月 24 日 09:36
--- 服务器版本: 5.5.53
--- PHP 版本: 5.4.45
+-- Host: localhost
+-- Date: 2019 - 04 - 24 09:36
+-- Mysql version: 5.5.53
+-- PHP version: 5.4.45
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- 数据库: `flerken`
+-- DB: `flerken`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `results`
+-- table structure `results`
 --
 
 CREATE TABLE IF NOT EXISTS `results` (

@@ -85,8 +85,7 @@ Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
 
 ## Acknowledgments
 
-We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Tencent Blade Team</b> for their insightful feedbacks throughout the project. We also thank <b>Ning Liu, Junjun
-Luo, and Lake Hu</b> for their valuable comments and support.
+We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Tencent Blade Team</b> for their insightful feedbacks throughout the project. In addition, we would like to thank <b>Andrew LeFevre, the creator of Bashfuscator</b>, for his valuable feedback and discussion on Linux obfuscation detection. We also thank <b>Ning Liu, Junjun Luo, and Lake Hu</b> for their helpful comments and support.
 
 ## License
 

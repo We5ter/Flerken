@@ -21,7 +21,7 @@ To better facilitate obfuscation detection, <b>we have proposed Flerken, a tooli
 
 ## Documentation
 
-For a detailed description of Flerken, please review our specification document <a href="https://github.com/We5ter/Flerken/blob/master/doc/Flerken_v1.0%20_Specification_%20Document.pdf" target="_blank">here</a>.
+For a detailed description of Flerken, please review our specification document <a href="https://github.com/We5ter/Flerken/blob/master/doc/Flerken_v1.0.2_Specification_%20Document.pdf" target="_blank">here</a>.
 
 ## Quick start
 

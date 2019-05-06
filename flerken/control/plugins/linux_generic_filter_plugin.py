@@ -38,7 +38,7 @@ class linux_generic_filter_plugin(object):
         expression.
         """
         try:
-            return re.compile(regex, re.I)
+            return re.compile(regex)
         except re.error as e:
             warnings.warn(
                 "Caught '{error}' compiling regex: {regex}"

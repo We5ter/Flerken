@@ -40,7 +40,7 @@ class linux_generic_detect_plugin(object):
         expression.
         """
         try:
-            return re.compile(regex, re.I)
+            return re.compile(regex)
         except re.error as e:
             warnings.warn(
                 "Caught '{error}' compiling regex: {regex}"
@@ -125,7 +125,7 @@ class linux_generic_detect_plugin(object):
             if self._varible_name_score() == 1:
                 if vn_rules_compiled[1].search(self.cmd) != None:
                     if linux_generic_filter_plugin(self.cmd,'varible_name').result == False:
-                        if len(self.cmd) < 300:
+                        if len(self.cmd) < 1000:
                             self.__TYPE_LIST.append('varible_name')
 
     def _detect_obfuscation(self):

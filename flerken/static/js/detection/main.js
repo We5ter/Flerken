@@ -101,7 +101,12 @@ $().ready(function(){
                     $('.loading').slideUp();
                     $('.result').fadeIn();
                     $('.hash').text(succ['hash']);
-                    $('.cmd').text(succ['cmd']);
+                    if (succ['cmd'].length > 500){
+                        $('.cmd').text(succ['cmd'].slice(0,500)+ "...");
+                    }
+                    else{
+                        $('.cmd').text(succ['cmd']);
+                    }
                     $('.obfuscated').text(succ['obfuscated']);
                     $('.obfuscated').css('color','#f47233');
                     $('.obfuscated').css('font-weight','800');

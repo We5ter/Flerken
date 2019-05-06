@@ -10,7 +10,7 @@ __copyright__   = "Copyright 2019, Apache License 2.0"
 
 APP_CONFIG = {
     "HOST": "127.0.0.1",
-    "PORT": 8080,
+    "PORT": 8081,
     "DEBUG": True, #debug mode
     "SECRET_KEY": "awesomeflerken*",
     "QPS_LIMIT": True,
@@ -23,7 +23,7 @@ DB_CONFIG = {
         "host": "127.0.0.1",
         "port": "3306",
         "user": "root",
-        "password": "root",
+        "password": "",
         "database": "flerken",
         'charset': 'utf8',  
         'DB_DEBUG': True,  # Please set this field to 'False' when your website going online

@@ -20,15 +20,15 @@ class linux_graphic_detect_plugin(object):
         self.cmd = cmd
         self.result = self._detect_obfuscation()
     
-    def _load_graphic_rules(self):
+    def _load_graphic_rule(self):
         try:
             with open(os.path.join(os.getcwd(),'flerken/config/rules/linux_rule.json')) as f:
-                self.rules = json.loads(f.read())['graphic']
-                return self.rules
+                self.rule = json.loads(f.read())['graphic']
+                return self.rule
         except Exception:
             with open(os.path.join(os.getcwd(),'../flerken/config/rules/linux_rule.json')) as f:
-                self.rules = json.loads(f.read())['graphic']
-                return self.rules
+                self.rule = json.loads(f.read())['graphic']
+                return self.rule
 
     def _prepare_pattern(self, regex):
         """
@@ -36,7 +36,7 @@ class linux_graphic_detect_plugin(object):
         expression.
         """
         try:
-            return re.compile(regex, re.I)
+            return re.compile(regex)
         except re.error as e:
             warnings.warn(
                 "Caught '{error}' compiling regex: {regex}"
@@ -45,9 +45,9 @@ class linux_graphic_detect_plugin(object):
             return re.compile(r'(?!x)x')
 
     def _check(self):
-        self._load_graphic_rules()
-        rules_compiled = self._prepare_pattern(self.rules['regex'])
-        if rules_compiled.search(self.cmd) == False:
+        self._load_graphic_rule()
+        rule_compiled = self._prepare_pattern(self.rule['regex'])
+        if rule_compiled.search(self.cmd) == False:
             return False
         else:
             return True

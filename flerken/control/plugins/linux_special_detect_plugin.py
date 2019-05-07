@@ -70,6 +70,8 @@ class linux_special_detect_plugin(object):
             variable_name = fi_rules_compiled[0].search(self.cmd).group(5)
             if fi_rules_compiled[1].search(self.cmd) != None and fi_rules_compiled[2].search(self.cmd) != None:
                 return True
+            elif fi_rules_compiled[3].search(self.cmd) != None:
+                return True
             else:
                 return False
 

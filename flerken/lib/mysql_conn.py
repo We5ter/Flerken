@@ -1103,7 +1103,7 @@ def is_numeric(var):
 
 # PDO::quote
 def pdo_quote(string):
-    return "'" + re.sub(r'(?<=[^\\])([\'\"\%\_])', r'\\\1', str(string)) + "'"
+    return "'" + re.sub(r'(?<=[^\\])([\'\"\%\_\\])', r'\\\1', str(string)) + "'"
 
 #M function
 def M(dbtable, ConfigID=0, dbConfig=None):

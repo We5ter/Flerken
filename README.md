@@ -30,6 +30,10 @@ Hereby, we highlight the functional properties Flerken basically satisfies as fo
 - **De-Obfuscated-Bash Tool: An image of the octopusbash-embedded docker.**
 - **A Web Manage Platform to monitor, config workflow of Flerken, also analysis the workflow ouput results.**
 
+## Web Demo Source Code
+
+Please checkout our another branch [web-demo](https://github.com/We5ter/Flerken/tree/web-demo).
+
 ## Getting Help
 
 If you have any question or feedbacks on Flerken. Please create an issue and choose a suitable label for it. We will solve it as soon as possible.

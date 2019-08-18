@@ -11,19 +11,7 @@
   
 </p>
 
-## Introduction
-
-<b>Command line obfuscation</b> has been proved to be a non-negligible factor in fileless malware or malicious actors that are "living off the land". To bypass signature-based detection, dedicated obfuscation techniques are shown to be used by red-team penetrations and even APT activities. Meanwhile, numerous obfuscators (namely tools perform syntax transformation) are open sourced, thus making obfuscating given commands increasingly effortless.
-
-<b>However, the number of suitable defenses remains to be few.</b> For Linux command line obfuscation,we can barely find any detection tools. Concerning defenses against Windows command obfuscation, existing schemes turn out to either lack of toolization, or only partially resolve the entire problem, sometimes even inaccurately.
-
-To better facilitate obfuscation detection, <b>we have proposed Flerken, a toolized platform that can be used to detect both Windows (CMD and Powershell) and Linux (Bash) commands</b>. The name of Flerken is inspired by a cat-like yet extremely powerful creature from Marvel world. Flerken is build on the basis of carefully collection of black/white samples, and can be divided into two sub-schemes, namely Kindle (Windows obfuscation detector) and Octopus (Linux obfuscation detector). To help optimize Flerken's classification performance, we adopt techniques such as machine learning, bi-directional feature filter ring, and script sandboxing.
-
-## Documentation
-
-For a detailed description of Flerken, please review our specification document <a href="https://github.com/We5ter/Flerken/blob/master/doc/Flerken_v1.0.2_Specification_%20Document.pdf" target="_blank">here</a>.
-
-## Quick start
+## Web Demo Quick Install
 
 - <b>Installation</b>
   
@@ -77,15 +65,6 @@ Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
 - <b>[frankie-huang/pythonMySQL](https://github.com/frankie-huang/pythonMySQL)</b>
 - <b>[jQuery](https://jquery.org)</b>
 - <b>[Swiper](https://idangero.us/swiper)</b>
-
-## Authors
-
-- <a href="https://www.researchgate.net/profile/Yao_Zhang80" target="_blank">Yao Zhang</a>
-- <a href="https://lightrains.org" target="_blank">Zhiyang Zeng</a>
-
-## Acknowledgments
-
-We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Tencent Blade Team</b> for their insightful feedbacks throughout the project. In addition, we would like to thank <b>Andrew LeFevre, the creator of Bashfuscator</b>, for his valuable feedback and discussion on Linux obfuscation detection. We also thank <b>Ning Liu, Junjun Luo, and Lake Hu</b> for their helpful comments and support.
 
 ## License
 

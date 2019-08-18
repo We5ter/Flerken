@@ -28,7 +28,7 @@ Hereby, we highlight the functional properties Flerken basically satisfies as fo
 ## Upcoming Release
 
 - **De-Obfuscated-Bash Tool: An image of the octopusbash-embedded docker.**
-- **A Web Console** to manage and config **bi-directional feature ring of Octopus**, **Gradient Boost Decision Tree Machine Learning of Kindle** and **docker containers cluster** etc.
+- **A Web Manage Platform to monitor, config workflow of Flerken, also analysis the workflow ouput results.**
 
 ## Getting Help
 

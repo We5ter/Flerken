@@ -1,4 +1,0 @@
-Flask
-Flask-WTF
-Flask-Limiter
-mysql-connector-python

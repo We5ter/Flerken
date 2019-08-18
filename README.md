@@ -13,49 +13,22 @@
 
 ## Introduction
 
-<b>Command line obfuscation</b> has been proved to be a non-negligible factor in fileless malware or malicious actors that are "living off the land". To bypass signature-based detection, dedicated obfuscation techniques are shown to be used by red-team penetrations and even APT activities. Meanwhile, numerous obfuscators (namely tools perform syntax transformation) are open sourced, thus making obfuscating given commands increasingly effortless.
+<b>Command Line Obfuscation (CLOB) </b>has been proved to be a non-negligible factor in fileless malware or malicious actors that are "living off the land". With dozens of obfuscation tools seen in the wild, by contrast few proper countermeasures can be found. In this talk, we present Flerken, an obfuscation detection approach that works for both Windows (Powershell and CMD) and Linux (Bash) commands. To the best of our knowledge, Flerken is the first solution that supports cross-platform obfuscation detection feature.
 
-<b>However, the number of suitable defenses remains to be few.</b> For Linux command line obfuscation,we can barely find any detection tools. Concerning defenses against Windows command obfuscation, existing schemes turn out to either lack of toolization, or only partially resolve the entire problem, sometimes even inaccurately.
+This talk first shares some key observations on CLOB such as its attack vectors and analyzing strategies. Then we give a detailed design of Flerken. The description is divided in two parts, namely <b>Kindle (for Windows)</b> and <b>Octopus (for Linux)</b>. Respectively, we will show how human readability can serve as an effective statistical feature against PS/CMD obfuscation, and how dynamic syntax parsing can be adopted to eliminate false positives/negatives against Bash CLOB. The effectiveness of Flerken is evaluated via representative black/white command samples and performance experiments. 
 
-To better facilitate obfuscation detection, <b>we have proposed Flerken, a toolized platform that can be used to detect both Windows (CMD and Powershell) and Linux (Bash) commands</b>. The name of Flerken is inspired by a cat-like yet extremely powerful creature from Marvel world. Flerken is build on the basis of carefully collection of black/white samples, and can be divided into two sub-schemes, namely Kindle (Windows obfuscation detector) and Octopus (Linux obfuscation detector). To help optimize Flerken's classification performance, we adopt techniques such as machine learning, bi-directional feature filter ring, and script sandboxing.
+Hereby, we highlight the functional properties Flerken basically satisfies as follows:
 
-## Documentation
+• <b>Scalability.</b> Flerken supports cross-platform obfuscation detection. Furthermore, Flerken can help achieve real-time obfuscation bubbling in server EDR systems (with a scale on the order of millions).
 
-For a detailed description of Flerken, please review our specification document <a href="https://github.com/We5ter/Flerken/blob/master/doc/Flerken_v1.0.2_Specification_%20Document.pdf" target="_blank">here</a>.
+• <b>Accuracy.</b> Flerken is adequate to correctly distinguish most Windows/Linux command obfuscations. Therefore, Flerken can be adopted by enterprises in many security investigations of server endpoints.
 
-## Quick start
+• <b>Availability.</b> Flerken now is accessible through its official webpage. All you have to do is to paste into the command string and test what you want to analyze. No specific input file format is required. We have also open-sourced Flerken on Github so you can build your own detector on demand.
 
-- <b>Installation</b>
-  
-  #### Step 1: Ensure you have installed python 3.x on your server, you can use the following command to check it.
-  
-  `[root@server:~$] python -V`
-  
-  #### Step 2: Install the required components, all the prerequisite components have been declared in requirement.txt.
-  
-  `[root@server:~$] pip install -r requirement.txt`
-  
-  #### Step 3: Login in your MySQL console, and import database
-  
-  `source /your path/Flerken/flerken/lib/flerken.sql`
-  
-  #### Step4: Custom your Flerken APP config as you want.
-  `Path: flerken/config/global_config.py`
-  
-  #### Step5: Now you can run it!
-   `[root@server:~$] python runApp.py`
-   
-  #### Step 6(Optional): You can build your own whitelists for reducing false positive rate.
-  `Path: flerken/config/whitelists/`
+## Upcoming Release
 
- 
-- <b>How to use</b> 
-
-  #### It's very easy to use as shown in the following picture, and we will also release API interfaces as soon.
-
-<p align="center">
-  <img src="doc/intro-animation.gif" width="95%">
-</p>
+- **De-Obfuscated-Bash Tool: An image of the octopusbash-embedded docker.**
+- **A Web Console** to manage and config **bi-directional feature ring of Octopus**, **Gradient Boost Decision Tree Machine Learning of Kindle** and **docker containers cluster** etc.
 
 ## Getting Help
 
@@ -69,14 +42,6 @@ If you have any question or feedbacks on Flerken. Please create an issue and cho
 
 Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
 
-## Build-in 3rd parties
-
-- <b>[Flask](http://flask.pocoo.org)</b>
-- <b>[Flask-WTF](https://flask-wtf.readthedocs.io/en/stable)</b>
-- <b>[Flask-Limiter](https://flask-limiter.readthedocs.io)</b>
-- <b>[frankie-huang/pythonMySQL](https://github.com/frankie-huang/pythonMySQL)</b>
-- <b>[jQuery](https://jquery.org)</b>
-- <b>[Swiper](https://idangero.us/swiper)</b>
 
 ## Authors
 
@@ -85,7 +50,7 @@ Please see our <a href="./CHANGELOG.md">CHANGELOG.md</a>
 
 ## Acknowledgments
 
-We would like to thank <b>Bghost Zhu, Junbo Li, Haizhang Du, Conan Hu, and other colleagues of Tencent Blade Team</b> for their insightful feedbacks throughout the project. In addition, we would like to thank <b>Andrew LeFevre, the creator of Bashfuscator</b>, for his valuable feedback and discussion on Linux obfuscation detection. We also thank <b>Ning Liu, Junjun Luo, and Lake Hu</b> for their helpful comments and support.
+We would like to thank all the contributors to this research project and all the members in Tencent Blade Team. In addition, we would like to thank security researchers Daniel Bohannon and Andrew LeFevre for their valuable feedback and discussion.
 
 ## License
 
